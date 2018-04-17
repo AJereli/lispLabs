@@ -1,0 +1,4 @@
+(defun reverseWrap (l)
+  (if (null (cdr l))
+      l
+      (list (reverseWrap (cdr l)) (car l))))

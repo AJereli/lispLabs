@@ -1,0 +1,4 @@
+(defun myFuncall (f &rest args)
+	(apply f args)
+)
+(myFuncall '+ 1 2 3)

@@ -1,0 +1,21 @@
+(defun index (e x)
+  (cond ((eq e (car x)) 0)
+        (t (+ 1 (index e (cdr x))))))
+
+
+(defun isEven (d)
+    (if (= (mod d 2) 0) t nil)
+)
+
+(defun isNotEven (d)
+    (if (/= (mod d 2) 0) t nil)
+)
+
+
+(defun split (l) 
+	(list
+	    (mapcan (lambda (e) (if (isEven (index e l)) (list e) nil)) l)
+	    (mapcan (lambda (e) (if (isNotEven (index e l)) (list e) nil)) l)	   
+))
+
+(split '(2 5 1 10 9))

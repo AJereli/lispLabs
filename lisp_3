@@ -1,0 +1,5 @@
+(defun myreplace (lst f v)
+  (mapcar (lambda (x)
+            (cond ((eq f x) v)
+                  (t x))) lst))  
+(myreplace '(q w e r q) 'q 'rep)

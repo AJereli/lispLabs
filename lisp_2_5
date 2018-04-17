@@ -1,0 +1,6 @@
+(defun any (pred l)
+	(not (null (mapcan pred l)))
+)
+
+(any (lambda (x) (if (> x 5) (list t) nil)) '(33 21 1))
+(any (lambda (x) (if (> x 5) (list t) nil)) '(3 5 1))

@@ -1,0 +1,6 @@
+(defun myfilter (pred l)
+	  (mapcan (lambda (x) (if (pred x) nil x)) l)
+)
+
+(myfilter (lambda (x) (if (> x 5) t nil)) '(33 21 1))
+(myfilter (lambda (x) (if (> x 5)  t nil)) '(3 5 1))

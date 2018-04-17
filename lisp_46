@@ -1,0 +1,23 @@
+(defun addParents (p m f)
+   (setf (get p 'mother) m)
+   (setf (get p 'father) f))
+(defun parents (x)
+	(list (get x 'mother) (get x 'father))
+ )
+ 
+ (defun bOrS (x1 x2)
+	 (cond ((equal (parents x1) (parents x2)) t)
+	  ((equal (cadr (parents x1)) (cadr (parents x2))) t)
+  	  ((equal (car (parents x1)) (car (parents x2))) t)
+	  (t nil)
+	)
+)
+ 
+(addParents 'pers 'juli 'vova)
+(addParents 'pers2 'juli 'vova)
+(addParents 'pers3 'lun 'vova)
+(addParents 'pers4 'kris 'nik)
+ 
+(bOrS 'pers 'pers2)
+(bOrS 'pers3 'pers2) 
+(bOrS 'pers3 'pers4)

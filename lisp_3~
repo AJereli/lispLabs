@@ -1,0 +1,6 @@
+(defun replace1 (lst f v)
+  (mapcar (lambda (x)
+            (cond ((eq f x) v)
+                  (t x))) lst))  
+
+(replace '(qqqq w e) 'q 'y)
