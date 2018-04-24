@@ -1,6 +1,10 @@
+|#   Определите фильтр (УДАЛйЬ-ЕСЛИ-НЕ пред список),удаляющий из списка 
+все элементы, которые не обладают свойством, наличие которого проверяет предикат пред. 
+ |#
+
 (defun myfilter (pred l)
 	  (mapcan (lambda (x) (if (pred x) nil x)) l)
 )
 
-(myfilter (lambda (x) (if (> x 5) t nil)) '(33 21 1))
+(myfilter #'(lambda (x) (if (> x 5) t nil)) '(33 21 1))
 (myfilter (lambda (x) (if (> x 5)  t nil)) '(3 5 1))

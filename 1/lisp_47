@@ -1,3 +1,7 @@
+|#   Определите функцию УДАЛИТЬ-ВСЕ-СВОЙСТВА, которая удаляет все свойства символа. 
+ |#
+
+
 (defun del (p) (mapcar (lambda (x) (remprop p x)) (symbol-plist p)))
 
 (defun addParents (p m f)

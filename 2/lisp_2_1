@@ -1,3 +1,6 @@
+|#    Определите FUNCALL через функционал APPLY.
+ |#
+
 (defun myFuncall (f &rest args)
 	(apply f args)
 )
