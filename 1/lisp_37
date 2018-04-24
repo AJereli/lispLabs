@@ -1,0 +1,17 @@
+(defun in (a l)
+    (cond
+        ((null l) nil) 
+        ((eq a (car l)) t) 
+        (t (in a (cdr l)))
+    )
+)
+(defun inters (a b)
+    (cond
+        ((null a) nil)
+        ((null b) nil)
+        ((in (car a) b) (cons (car a) (inters (cdr a) b)) )
+        (t (inters (cdr a) b))
+    )
+)
+
+ (inters '(1 3 4 5) '(1 5 9 10 11))

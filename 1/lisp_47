@@ -1,0 +1,13 @@
+(defun del (p) (mapcar (lambda (x) (remprop p x)) (symbol-plist p)))
+
+(defun addParents (p m f)
+   (setf (get p 'mother) m)
+   (setf (get p 'father) f))
+   
+(addParents 'pers 'juli 'vova)
+
+(symbol-plist 'pers)
+
+(del 'pers)
+
+(symbol-plist 'pers)
