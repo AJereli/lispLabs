@@ -4,9 +4,10 @@
  который истинен в случае, если x1 и x2 — сестры или братья, родные или с одним общим родителем. 
  |#
 
-(defun addParents (p m f)
-   (setf (get p 'mother) m)
-   (setf (get p 'father) f))
+(defun addParents ( &key person mother father)
+   (setf (get person 'mother) mother)
+   (setf (get person 'father) father))
+   
 (defun parents (x)
 	(list (get x 'mother) (get x 'father))
  )
@@ -19,10 +20,10 @@
 	)
 )
  
-(addParents 'pers 'juli 'vova)
-(addParents 'pers2 'juli 'vova)
-(addParents 'pers3 'lun 'vova)
-(addParents 'pers4 'kris 'nik)
+(addParents :person 'pers :mother 'juli :father 'vova)
+(addParents :person 'pers2 :mother 'juli :father 'vova)
+(addParents :person 'pers3 :mother 'lun :father 'vova)
+(addParents :person 'pers4 :mother 'kris :father 'nik)
  
 (bOrS 'pers 'pers2)
 (bOrS 'pers3 'pers2) 

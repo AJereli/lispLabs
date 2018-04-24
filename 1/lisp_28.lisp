@@ -1,10 +1,10 @@
 |#    Определите функцию, вычисляющую, сколько всего атомов в списке (списочной структуре).
  |#
 
-(defun atomCnt (l &optional (cnt 0))
-  (cond ((null l) cnt)
-    ((atom (car l)) (atomCnt (cdr l) (+ cnt 1)))
-    (t (atomCnt (cdr l) cnt))))
+(defun atomCnt (l)
+  (cond ((null l) 0)
+    ((atom (car l)) (+ 1 (atomCnt (cdr l))))
+    (t (atomCnt (cdr l)))))
 	
 (atomCnt '(2 91 1))
 (atomCnt '(2 (3) 1 1))
